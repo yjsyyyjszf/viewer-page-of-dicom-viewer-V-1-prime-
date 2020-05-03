@@ -1,0 +1,80 @@
+<html lang="en">
+
+<script type="text/javascript" src="./js/i18next.min.js"></script>
+<script type="text/javascript" src="./js/i18nextXHRBackend.min.js"></script>
+<script type="text/javascript" src="./js/i18nextBrowserLanguageDetector.min.js"></script>
+<script type="text/javascript" src="./js/jszip.min.js"></script>
+<script type="text/javascript" src="./js/konva.min.js"></script>
+<script type="text/javascript" src="./js/magic-wand-min.js"></script>
+<!-- Third party (viewer) -->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/nprogress.js"></script>
+
+<!-- decoders -->
+<script type="text/javascript" src="./js/rle.js"></script>
+<script type="text/javascript" src="./js/jpx.js"></script>
+<script type="text/javascript" src="./js/util.js"></script>
+<script type="text/javascript" src="./js/arithmetic_decoder.js"></script>
+<script type="text/javascript" src="./js/jpg.js"></script>
+<script type="text/javascript" src="./js/lossless-min.js"></script>
+<!-- dwv -->
+<script type="text/javascript" src="./js/dwv.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <title>simple dicom viewer!</title>
+</head>
+
+<body style="background-color: black">
+
+    <div class="container" style="margin-top:25px">
+        <div class="row">
+            <div class="col-md-10 m-auto">
+                <div id="dwv" style="margin-top:8px">
+                    <div class="layerContainer">
+                        <canvas class="imageLayer" id="canvas"></canvas>
+                        <div class="drawDiv">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/canvas.js"></script>
+    <script>
+    // base function to get elements
+    dwv.gui.getElement = dwv.gui.base.getElement;
+    dwv.gui.displayProgress = function (percent) {};
+
+    // create the dwv app
+    var app = new dwv.App();
+    // initialise with the id of the container div
+        var options = {
+            "containerDivId": "dwv",
+            "tools": ["Draw"],
+            "shapes": ["Ruler"],
+        };
+        app.init(options);
+    // load dicom data
+
+        app.loadURLs(["http://s11.picofile.com/file/8395924226/founder-xray1.png"]);
+</script>
+</body>
+
+</html>

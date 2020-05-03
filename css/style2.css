@@ -1,0 +1,18 @@
+
+.main{
+    background-color: black;
+}
+#canvas {
+    position: relative;
+    margin: auto;
+    background: #ececec;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btn-disabled {
+    color: rgb(0, 0, 0) !important;
+    cursor: default;
+}
+
